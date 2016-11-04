@@ -1,0 +1,914 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="left-down" width="30" height="20" tilewidth="64" tileheight="64" nextobjectid="1206">
+ <properties>
+  <property name="unity:scale" type="float" value="1"/>
+ </properties>
+ <tileset firstgid="1" name="base_tile" tilewidth="64" tileheight="64" spacing="1" tilecount="1" columns="1">
+  <properties>
+   <property name="unity:scale" type="float" value="0.01"/>
+  </properties>
+  <image source="base.png" width="64" height="64"/>
+  <tile id="0">
+   <properties>
+    <property name="Terrain" value="Base"/>
+   </properties>
+   <objectgroup draworder="index" name="Bas">
+    <properties>
+     <property name="unity:tag" value="Ground"/>
+    </properties>
+    <object id="6" name="base" type="Ground" x="1" y="0" width="63" height="64"/>
+   </objectgroup>
+  </tile>
+ </tileset>
+ <tileset firstgid="2" name="elevated_tile" tilewidth="64" tileheight="64" spacing="1" tilecount="1" columns="1">
+  <image source="Elevated.png" width="64" height="64"/>
+  <tile id="0">
+   <properties>
+    <property name="Terrain" value="Elevated"/>
+   </properties>
+   <objectgroup draworder="index">
+    <object id="2" name="Elevated" x="0" y="0" width="64" height="64"/>
+   </objectgroup>
+  </tile>
+ </tileset>
+ <tileset firstgid="3" name="stairs_left" tilewidth="64" tileheight="64" spacing="1" tilecount="1" columns="1">
+  <image source="stairs_left.png" width="64" height="64"/>
+  <tile id="0">
+   <properties>
+    <property name="Terrain" value="Stairs"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="4" name="stairs_right" tilewidth="64" tileheight="64" spacing="1" tilecount="1" columns="1">
+  <image source="stairs_right.png" width="64" height="64"/>
+  <tile id="0">
+   <properties>
+    <property name="Terrain" value="Stairs"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="5" name="stairs_left_flip" tilewidth="64" tileheight="64" spacing="1" tilecount="1" columns="1">
+  <image source="stairs_left_flip.png" width="64" height="64"/>
+  <tile id="0">
+   <properties>
+    <property name="Terrain" value="Stairs"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="6" name="stairs_right_flip" tilewidth="64" tileheight="64" spacing="1" tilecount="1" columns="1">
+  <image source="stairs_right_flip.png" width="64" height="64"/>
+  <tile id="0">
+   <properties>
+    <property name="Terrain" value="Stairs"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="7" name="stairs_left_rotl" tilewidth="64" tileheight="64" spacing="1" tilecount="1" columns="1">
+  <image source="stairs_left_rotl.png" width="64" height="64"/>
+  <tile id="0">
+   <properties>
+    <property name="Terrain" value="Stairs"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="8" name="stairs_left_rotr" tilewidth="64" tileheight="64" spacing="1" tilecount="1" columns="1">
+  <image source="stairs_left_rotr.png" width="64" height="64"/>
+  <tile id="0">
+   <properties>
+    <property name="Terrain" value="Stairs"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="9" name="stairs_right_rotl" tilewidth="64" tileheight="64" spacing="1" tilecount="1" columns="1">
+  <image source="stairs_right_rotl.png" width="64" height="64"/>
+  <tile id="0">
+   <properties>
+    <property name="Terrain" value="Stairs"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="10" name="stairs_right_rotr" tilewidth="64" tileheight="64" spacing="1" tilecount="1" columns="1">
+  <image source="stairs_right_rotr.png" width="64" height="64"/>
+  <tile id="0">
+   <properties>
+    <property name="Terrain" value="Stairs"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="11" name="start_blue" tilewidth="64" tileheight="64" spacing="1" tilecount="1" columns="1">
+  <image source="start_blue.png" width="64" height="64"/>
+  <tile id="0">
+   <properties>
+    <property name="Terrain" value="Base"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="12" name="start_red" tilewidth="64" tileheight="64" spacing="1" tilecount="1" columns="1">
+  <image source="start_red.png" width="64" height="64"/>
+  <tile id="0">
+   <properties>
+    <property name="Terrain" value="Base"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="13" name="cover" tilewidth="64" tileheight="64" tilecount="1" columns="1">
+  <image source="cover.png" width="64" height="64"/>
+  <tile id="0">
+   <properties>
+    <property name="Terrain" value="Cover"/>
+   </properties>
+   <objectgroup draworder="index">
+    <object id="1" name="cover" x="0" y="0" width="64" height="64"/>
+   </objectgroup>
+  </tile>
+ </tileset>
+ <tileset firstgid="14" name="rockfloor_down" tilewidth="64" tileheight="64" tilecount="1" columns="1">
+  <image source="rockfloor_down.png" width="64" height="64"/>
+  <tile id="0">
+   <objectgroup draworder="index">
+    <object id="1" name="Ground" x="0" y="0" width="64" height="64"/>
+   </objectgroup>
+  </tile>
+ </tileset>
+ <tileset firstgid="15" name="rockfloor_downright" tilewidth="64" tileheight="64" tilecount="1" columns="1">
+  <image source="rockfloor_downright.png" width="64" height="64"/>
+  <tile id="0">
+   <objectgroup draworder="index">
+    <object id="1" name="Ground" x="0" y="0" width="64" height="64"/>
+   </objectgroup>
+  </tile>
+ </tileset>
+ <tileset firstgid="16" name="rockfloor_left" tilewidth="64" tileheight="64" tilecount="1" columns="1">
+  <image source="rockfloor_left.png" width="64" height="64"/>
+  <tile id="0">
+   <objectgroup draworder="index" name="Ground">
+    <object id="1" name="Ground" x="0" y="0" width="64" height="64"/>
+   </objectgroup>
+  </tile>
+ </tileset>
+ <tileset firstgid="17" name="rockfloor_right" tilewidth="64" tileheight="64" tilecount="1" columns="1">
+  <image source="rockfloor_right.png" width="64" height="64"/>
+  <tile id="0">
+   <objectgroup draworder="index">
+    <object id="1" name="Ground" x="0" y="0" width="64" height="64"/>
+   </objectgroup>
+  </tile>
+ </tileset>
+ <tileset firstgid="18" name="rockfloor_up" tilewidth="64" tileheight="64" tilecount="1" columns="1">
+  <image source="rockfloor_up.png" width="64" height="64"/>
+  <tile id="0">
+   <objectgroup draworder="index">
+    <object id="2" name="Ground" x="0" y="0" width="64" height="64"/>
+   </objectgroup>
+  </tile>
+ </tileset>
+ <tileset firstgid="19" name="rockfloor_upleft" tilewidth="64" tileheight="64" tilecount="1" columns="1">
+  <image source="rockfloor_upleft.png" width="64" height="64"/>
+  <tile id="0">
+   <objectgroup draworder="index">
+    <object id="1" name="Ground" x="0" y="0" width="64" height="64"/>
+   </objectgroup>
+  </tile>
+ </tileset>
+ <tileset firstgid="20" name="rockfloor_upright" tilewidth="64" tileheight="64" tilecount="1" columns="1">
+  <image source="rockfloor_upright.png" width="64" height="64"/>
+  <tile id="0">
+   <objectgroup draworder="index">
+    <object id="1" name="Ground" x="0" y="0" width="64" height="64"/>
+   </objectgroup>
+  </tile>
+ </tileset>
+ <tileset firstgid="21" name="rockfloor_downleft" tilewidth="64" tileheight="64" tilecount="1" columns="1">
+  <image source="rockfloor_downleft.png" width="64" height="64"/>
+  <tile id="0">
+   <objectgroup draworder="index">
+    <object id="1" name="Ground" x="0" y="0" width="64" height="64"/>
+   </objectgroup>
+  </tile>
+ </tileset>
+ <tileset firstgid="22" name="rockfloor_corner" tilewidth="64" tileheight="64" tilecount="1" columns="1">
+  <image source="corner.png" width="64" height="64"/>
+  <tile id="0">
+   <objectgroup draworder="index">
+    <object id="1" name="Ground" x="0" y="0" width="64" height="64"/>
+   </objectgroup>
+  </tile>
+ </tileset>
+ <tileset firstgid="23" name="rockfloor_bottom_u" tilewidth="64" tileheight="64" tilecount="1" columns="1">
+  <image source="rocku.png" width="64" height="64"/>
+  <tile id="0">
+   <objectgroup draworder="index">
+    <object id="1" name="Ground" x="0" y="0" width="64" height="64"/>
+   </objectgroup>
+  </tile>
+ </tileset>
+ <tileset firstgid="24" name="rockfloor_corner_2" tilewidth="64" tileheight="64" tilecount="1" columns="1">
+  <image source="corner3.png" width="64" height="64"/>
+  <tile id="0">
+   <objectgroup draworder="index">
+    <object id="1" name="Ground" type="Ground" x="0" y="0" width="64" height="64"/>
+   </objectgroup>
+  </tile>
+ </tileset>
+ <tileset firstgid="25" name="elevated_border" tilewidth="64" tileheight="64" tilecount="1" columns="1">
+  <image source="elevatedb_down.png" width="64" height="64"/>
+  <tile id="0">
+   <objectgroup draworder="index">
+    <object id="1" name="Elevated" x="0" y="0" width="64" height="64"/>
+   </objectgroup>
+  </tile>
+ </tileset>
+ <tileset firstgid="26" name="elevated_border_edge" tilewidth="64" tileheight="64" tilecount="1" columns="1">
+  <image source="elevatededge_dr.png" width="64" height="64"/>
+  <tile id="0">
+   <objectgroup draworder="index">
+    <object id="1" name="Elevated" x="0" y="0" width="64" height="64"/>
+   </objectgroup>
+  </tile>
+ </tileset>
+ <tileset firstgid="27" name="elevated_border_rl" tilewidth="64" tileheight="64" tilecount="1" columns="1">
+  <image source="elevatedb_rl.png" width="64" height="64"/>
+  <tile id="0">
+   <objectgroup draworder="index">
+    <object id="1" x="0" y="0" width="64" height="64"/>
+   </objectgroup>
+  </tile>
+ </tileset>
+ <tileset firstgid="28" name="stairs_tile" tilewidth="64" tileheight="64" tilecount="1" columns="1">
+  <image source="stairs3.png" width="64" height="64"/>
+  <tile id="0">
+   <objectgroup draworder="index">
+    <object id="1" x="0" y="0" width="64" height="64"/>
+   </objectgroup>
+  </tile>
+ </tileset>
+ <tileset firstgid="29" name="stairs_tile_right" tilewidth="64" tileheight="64" tilecount="1" columns="1">
+  <image source="stairs3right.png" width="64" height="64"/>
+  <tile id="0">
+   <objectgroup draworder="index">
+    <object id="1" x="0" y="0" width="64" height="64"/>
+   </objectgroup>
+  </tile>
+ </tileset>
+ <tileset firstgid="30" name="elevated_corner" tilewidth="64" tileheight="64" tilecount="1" columns="1">
+  <image source="ElevatedCorner.png" width="64" height="64"/>
+  <tile id="0">
+   <objectgroup draworder="index">
+    <object id="1" x="0" y="0" width="64" height="64"/>
+   </objectgroup>
+  </tile>
+ </tileset>
+ <tileset firstgid="31" name="stairs_top" tilewidth="64" tileheight="64" tilecount="1" columns="1">
+  <image source="StairsTop.png" width="64" height="64"/>
+  <tile id="0">
+   <objectgroup draworder="index">
+    <object id="1" x="0" y="0" width="64" height="64"/>
+   </objectgroup>
+  </tile>
+ </tileset>
+ <tileset firstgid="32" name="wall block [checkered]" tilewidth="64" tileheight="64" tilecount="1" columns="1">
+  <image source="wall block [checkered].png" width="64" height="64"/>
+  <tile id="0">
+   <objectgroup draworder="index">
+    <object id="1" x="0" y="0" width="64" height="64"/>
+   </objectgroup>
+  </tile>
+ </tileset>
+ <tileset firstgid="33" name="stairs_top_rl" tilewidth="64" tileheight="64" tilecount="1" columns="1">
+  <image source="StairsTop2.png" width="64" height="64"/>
+  <tile id="0">
+   <objectgroup draworder="index">
+    <object id="3" x="0" y="0" width="64" height="64"/>
+   </objectgroup>
+  </tile>
+ </tileset>
+ <objectgroup name="Ground">
+  <properties>
+   <property name="Cost" type="int" value="1"/>
+   <property name="Terrain" value="Ground"/>
+   <property name="unity:tag" value="Ground"/>
+  </properties>
+  <object id="121" name="Tile" gid="1" x="384" y="448" width="64" height="64"/>
+  <object id="122" name="Tile" gid="1" x="448" y="448" width="64" height="64"/>
+  <object id="125" name="Tile" gid="1" x="448" y="384" width="64" height="64"/>
+  <object id="126" name="Tile" gid="1" x="512" y="320" width="64" height="64"/>
+  <object id="130" name="Tile" gid="1" x="576" y="320" width="64" height="64"/>
+  <object id="132" name="Tile" gid="1" x="576" y="384" width="64" height="64"/>
+  <object id="133" name="Tile" gid="1" x="640" y="384" width="64" height="64"/>
+  <object id="134" name="Tile" gid="1" x="704" y="384" width="64" height="64"/>
+  <object id="136" name="Tile" gid="1" x="576" y="448" width="64" height="64"/>
+  <object id="137" name="Tile" gid="1" x="640" y="448" width="64" height="64"/>
+  <object id="140" name="Tile" gid="1" x="640" y="512" width="64" height="64"/>
+  <object id="144" name="Tile" gid="1" x="640" y="576" width="64" height="64"/>
+  <object id="147" name="Tile" gid="1" x="512" y="576" width="64" height="64"/>
+  <object id="148" name="Tile" gid="1" x="512" y="512" width="64" height="64"/>
+  <object id="149" name="Tile" gid="1" x="448" y="512" width="64" height="64"/>
+  <object id="150" name="Tile" gid="1" x="448" y="576" width="64" height="64"/>
+  <object id="151" name="Tile" gid="1" x="448" y="640" width="64" height="64"/>
+  <object id="152" name="Tile" gid="1" x="384" y="512" width="64" height="64"/>
+  <object id="153" name="Tile" gid="1" x="320" y="512" width="64" height="64"/>
+  <object id="154" name="Tile" gid="1" x="256" y="512" width="64" height="64"/>
+  <object id="155" name="Tile" gid="1" x="192" y="512" width="64" height="64"/>
+  <object id="156" name="Tile" gid="1" x="128" y="512" width="64" height="64"/>
+  <object id="157" name="Tile" gid="1" x="64" y="512" width="64" height="64"/>
+  <object id="158" name="Tile" gid="1" x="0" y="512" width="64" height="64"/>
+  <object id="159" name="Tile" gid="1" x="0" y="576" width="64" height="64"/>
+  <object id="160" name="Tile" gid="1" x="64" y="576" width="64" height="64"/>
+  <object id="161" name="Tile" gid="1" x="128" y="576" width="64" height="64"/>
+  <object id="162" name="Tile" gid="1" x="192" y="576" width="64" height="64"/>
+  <object id="163" name="Tile" gid="1" x="256" y="576" width="64" height="64"/>
+  <object id="164" name="Tile" gid="1" x="320" y="576" width="64" height="64"/>
+  <object id="165" name="Tile" gid="1" x="320" y="640" width="64" height="64"/>
+  <object id="166" name="Tile" gid="1" x="256" y="640" width="64" height="64"/>
+  <object id="167" name="Tile" gid="1" x="192" y="640" width="64" height="64"/>
+  <object id="168" name="Tile" gid="1" x="128" y="640" width="64" height="64"/>
+  <object id="169" name="Tile" gid="1" x="64" y="640" width="64" height="64"/>
+  <object id="170" name="Tile" gid="1" x="0" y="640" width="64" height="64"/>
+  <object id="171" name="Tile" gid="1" x="0" y="704" width="64" height="64"/>
+  <object id="172" name="Tile" gid="1" x="64" y="704" width="64" height="64"/>
+  <object id="173" name="Tile" gid="1" x="128" y="704" width="64" height="64"/>
+  <object id="174" name="Tile" gid="1" x="192" y="704" width="64" height="64"/>
+  <object id="175" name="Tile" gid="1" x="256" y="704" width="64" height="64"/>
+  <object id="176" name="Tile" gid="1" x="320" y="704" width="64" height="64"/>
+  <object id="177" name="Tile" gid="1" x="320" y="768" width="64" height="64"/>
+  <object id="178" name="Tile" gid="1" x="256" y="768" width="64" height="64"/>
+  <object id="179" name="Tile" gid="1" x="128" y="768" width="64" height="64"/>
+  <object id="180" name="Tile" gid="1" x="64" y="768" width="64" height="64"/>
+  <object id="181" name="Tile" gid="1" x="0" y="768" width="64" height="64"/>
+  <object id="182" name="Tile" gid="1" x="192" y="768" width="64" height="64"/>
+  <object id="183" name="Tile" gid="1" x="0" y="832" width="64" height="64"/>
+  <object id="184" name="Tile" gid="1" x="64" y="832" width="64" height="64"/>
+  <object id="185" name="Tile" gid="1" x="128" y="832" width="64" height="64"/>
+  <object id="186" name="Tile" gid="1" x="192" y="832" width="64" height="64"/>
+  <object id="187" name="Tile" gid="1" x="256" y="832" width="64" height="64"/>
+  <object id="188" name="Tile" gid="1" x="320" y="832" width="64" height="64"/>
+  <object id="189" name="Tile" gid="1" x="384" y="832" width="64" height="64"/>
+  <object id="190" name="Tile" gid="1" x="448" y="704" width="64" height="64"/>
+  <object id="192" name="Tile" gid="1" x="448" y="768" width="64" height="64"/>
+  <object id="194" name="Tile" gid="1" x="448" y="832" width="64" height="64"/>
+  <object id="201" name="Tile" gid="1" x="384" y="896" width="64" height="64"/>
+  <object id="203" name="Tile" gid="1" x="448" y="896" width="64" height="64"/>
+  <object id="206" name="Tile" gid="1" x="448" y="960" width="64" height="64"/>
+  <object id="209" name="Tile" gid="1" x="512" y="1024" width="64" height="64"/>
+  <object id="215" name="Tile" gid="1" x="576" y="960" width="64" height="64"/>
+  <object id="216" name="Tile" gid="1" x="576" y="1024" width="64" height="64"/>
+  <object id="219" name="Tile" gid="1" x="640" y="960" width="64" height="64"/>
+  <object id="220" name="Tile" gid="1" x="704" y="960" width="64" height="64"/>
+  <object id="239" name="Tile" gid="1" x="1152" y="960" width="64" height="64"/>
+  <object id="269" name="Tile" gid="1" x="1344" y="320" width="64" height="64"/>
+  <object id="270" name="Tile" gid="1" x="1280" y="320" width="64" height="64"/>
+  <object id="272" name="Tile" gid="1" x="1216" y="384" width="64" height="64"/>
+  <object id="273" name="Tile" gid="1" x="1280" y="384" width="64" height="64"/>
+  <object id="277" name="Tile" gid="1" x="1408" y="384" width="64" height="64"/>
+  <object id="278" name="Tile" gid="1" x="1408" y="448" width="64" height="64"/>
+  <object id="279" name="Tile" gid="1" x="1472" y="448" width="64" height="64"/>
+  <object id="286" name="Tile" gid="1" x="1216" y="448" width="64" height="64"/>
+  <object id="287" name="Tile" gid="1" x="1280" y="448" width="64" height="64"/>
+  <object id="288" name="Tile" gid="1" x="1216" y="512" width="64" height="64"/>
+  <object id="289" name="Tile" gid="1" x="1216" y="576" width="64" height="64"/>
+  <object id="290" name="Tile" gid="1" x="1216" y="640" width="64" height="64"/>
+  <object id="291" name="Tile" gid="1" x="1280" y="640" width="64" height="64"/>
+  <object id="292" name="Tile" gid="1" x="1344" y="640" width="64" height="64"/>
+  <object id="293" name="Tile" gid="1" x="1344" y="576" width="64" height="64"/>
+  <object id="294" name="Tile" gid="1" x="1344" y="512" width="64" height="64"/>
+  <object id="295" name="Tile" gid="1" x="1408" y="512" width="64" height="64"/>
+  <object id="296" name="Tile" gid="1" x="1408" y="576" width="64" height="64"/>
+  <object id="297" name="Tile" gid="1" x="1408" y="640" width="64" height="64"/>
+  <object id="303" name="Tile" gid="1" x="1344" y="1024" width="64" height="64"/>
+  <object id="304" name="Tile" gid="1" x="1280" y="1024" width="64" height="64"/>
+  <object id="306" name="Tile" gid="1" x="1216" y="960" width="64" height="64"/>
+  <object id="307" name="Tile" gid="1" x="1280" y="960" width="64" height="64"/>
+  <object id="308" name="Tile" gid="1" x="1280" y="896" width="64" height="64"/>
+  <object id="309" name="Tile" gid="1" x="1216" y="896" width="64" height="64"/>
+  <object id="310" name="Tile" gid="1" x="1216" y="832" width="64" height="64"/>
+  <object id="311" name="Tile" gid="1" x="1216" y="768" width="64" height="64"/>
+  <object id="312" name="Tile" gid="1" x="1216" y="704" width="64" height="64"/>
+  <object id="313" name="Tile" gid="1" x="1280" y="704" width="64" height="64"/>
+  <object id="314" name="Tile" gid="1" x="1344" y="704" width="64" height="64"/>
+  <object id="315" name="Tile" gid="1" x="1408" y="704" width="64" height="64"/>
+  <object id="316" name="Tile" gid="1" x="1408" y="768" width="64" height="64"/>
+  <object id="317" name="Tile" gid="1" x="1344" y="768" width="64" height="64"/>
+  <object id="318" name="Tile" gid="1" x="1344" y="832" width="64" height="64"/>
+  <object id="319" name="Tile" gid="1" x="1408" y="832" width="64" height="64"/>
+  <object id="320" name="Tile" gid="1" x="1408" y="896" width="64" height="64"/>
+  <object id="321" name="Tile" gid="1" x="1408" y="960" width="64" height="64"/>
+  <object id="326" name="Tile" gid="1" x="1472" y="896" width="64" height="64"/>
+  <object id="327" name="Tile" gid="1" x="1472" y="832" width="64" height="64"/>
+  <object id="328" name="Tile" gid="1" x="1536" y="832" width="64" height="64"/>
+  <object id="334" name="Tile" gid="1" x="1856" y="832" width="64" height="64"/>
+  <object id="335" name="Tile" gid="1" x="1792" y="832" width="64" height="64"/>
+  <object id="336" name="Tile" gid="1" x="1728" y="832" width="64" height="64"/>
+  <object id="337" name="Tile" gid="1" x="1664" y="832" width="64" height="64"/>
+  <object id="338" name="Tile" gid="1" x="1600" y="832" width="64" height="64"/>
+  <object id="339" name="Tile" gid="1" x="1536" y="512" width="64" height="64"/>
+  <object id="340" name="Tile" gid="1" x="1472" y="512" width="64" height="64"/>
+  <object id="341" name="Tile" gid="1" x="1600" y="512" width="64" height="64"/>
+  <object id="342" name="Tile" gid="1" x="1664" y="512" width="64" height="64"/>
+  <object id="343" name="Tile" gid="1" x="1728" y="512" width="64" height="64"/>
+  <object id="344" name="Tile" gid="1" x="1792" y="512" width="64" height="64"/>
+  <object id="345" name="Tile" gid="1" x="1856" y="512" width="64" height="64"/>
+  <object id="346" name="Tile" gid="1" x="1856" y="576" width="64" height="64"/>
+  <object id="347" name="Tile" gid="1" x="1792" y="576" width="64" height="64"/>
+  <object id="348" name="Tile" gid="1" x="1728" y="576" width="64" height="64"/>
+  <object id="349" name="Tile" gid="1" x="1664" y="576" width="64" height="64"/>
+  <object id="350" name="Tile" gid="1" x="1600" y="576" width="64" height="64"/>
+  <object id="351" name="Tile" gid="1" x="1536" y="576" width="64" height="64"/>
+  <object id="352" name="Tile" gid="1" x="1536" y="640" width="64" height="64"/>
+  <object id="353" name="Tile" gid="1" x="1600" y="640" width="64" height="64"/>
+  <object id="354" name="Tile" gid="1" x="1664" y="640" width="64" height="64"/>
+  <object id="355" name="Tile" gid="1" x="1728" y="640" width="64" height="64"/>
+  <object id="356" name="Tile" gid="1" x="1792" y="640" width="64" height="64"/>
+  <object id="357" name="Tile" gid="1" x="1856" y="640" width="64" height="64"/>
+  <object id="358" name="Tile" gid="1" x="1856" y="704" width="64" height="64"/>
+  <object id="359" name="Tile" gid="1" x="1792" y="704" width="64" height="64"/>
+  <object id="360" name="Tile" gid="1" x="1728" y="704" width="64" height="64"/>
+  <object id="361" name="Tile" gid="1" x="1664" y="704" width="64" height="64"/>
+  <object id="362" name="Tile" gid="1" x="1600" y="704" width="64" height="64"/>
+  <object id="363" name="Tile" gid="1" x="1536" y="704" width="64" height="64"/>
+  <object id="364" name="Tile" gid="1" x="1536" y="768" width="64" height="64"/>
+  <object id="366" name="Tile" gid="1" x="1600" y="768" width="64" height="64"/>
+  <object id="367" name="Tile" gid="1" x="1664" y="768" width="64" height="64"/>
+  <object id="368" name="Tile" gid="1" x="1728" y="768" width="64" height="64"/>
+  <object id="369" name="Tile" gid="1" x="1792" y="768" width="64" height="64"/>
+  <object id="370" name="Tile" gid="1" x="1856" y="768" width="64" height="64"/>
+  <object id="392" name="Tile" gid="14" x="512" y="1088" width="64" height="64"/>
+  <object id="396" name="Tile" gid="21" x="448" y="1088" width="64" height="64"/>
+  <object id="397" name="Tile" gid="21" x="384" y="1024" width="64" height="64"/>
+  <object id="398" name="Tile" gid="21" x="320" y="960" width="64" height="64"/>
+  <object id="399" name="Tile" gid="14" x="256" y="896" width="64" height="64"/>
+  <object id="400" name="Tile" gid="14" x="192" y="896" width="64" height="64"/>
+  <object id="412" name="Tile" gid="14" x="704" y="1024" width="64" height="64"/>
+  <object id="413" name="Tile" gid="14" x="768" y="1024" width="64" height="64"/>
+  <object id="414" name="Tile" gid="14" x="832" y="1024" width="64" height="64"/>
+  <object id="415" name="Tile" gid="14" x="896" y="1024" width="64" height="64"/>
+  <object id="416" name="Tile" gid="14" x="960" y="1024" width="64" height="64"/>
+  <object id="417" name="Tile" gid="14" x="1024" y="1024" width="64" height="64"/>
+  <object id="418" name="Tile" gid="14" x="1088" y="1024" width="64" height="64"/>
+  <object id="419" name="Tile" gid="14" x="1152" y="1024" width="64" height="64"/>
+  <object id="423" name="Tile" gid="14" x="1344" y="1088" width="64" height="64"/>
+  <object id="424" name="Tile" gid="15" x="1408" y="1088" width="64" height="64"/>
+  <object id="426" name="Tile" gid="15" x="1472" y="1024" width="64" height="64"/>
+  <object id="427" name="Tile" gid="15" x="1536" y="960" width="64" height="64"/>
+  <object id="428" name="Tile" gid="14" x="1600" y="896" width="64" height="64"/>
+  <object id="430" name="Tile" gid="14" x="1664" y="896" width="64" height="64"/>
+  <object id="432" name="Tile" gid="14" x="1856" y="896" width="64" height="64"/>
+  <object id="433" name="Tile" gid="14" x="0" y="896" width="64" height="64"/>
+  <object id="434" name="Tile" gid="18" x="0" y="448" width="64" height="64"/>
+  <object id="435" name="Tile" gid="18" x="64" y="448" width="64" height="64"/>
+  <object id="436" name="Tile" gid="18" x="128" y="448" width="64" height="64"/>
+  <object id="437" name="Tile" gid="18" x="192" y="448" width="64" height="64"/>
+  <object id="438" name="Tile" gid="18" x="256" y="448" width="64" height="64"/>
+  <object id="439" name="Tile" gid="19" x="320" y="384" width="64" height="64"/>
+  <object id="440" name="Tile" gid="19" x="384" y="320" width="64" height="64"/>
+  <object id="446" name="Tile" gid="22" x="1408" y="1024" width="64" height="64"/>
+  <object id="447" name="Tile" gid="22" x="1472" y="960" width="64" height="64"/>
+  <object id="448" name="Tile" gid="22" x="1536" y="896" width="64" height="64"/>
+  <object id="453" name="Tile" gid="19" x="448" y="256" width="64" height="64"/>
+  <object id="454" name="Tile" gid="18" x="512" y="256" width="64" height="64"/>
+  <object id="459" name="Tile" gid="18" x="704" y="320" width="64" height="64"/>
+  <object id="460" name="Tile" gid="18" x="768" y="320" width="64" height="64"/>
+  <object id="461" name="Tile" gid="18" x="832" y="320" width="64" height="64"/>
+  <object id="462" name="Tile" gid="18" x="896" y="320" width="64" height="64"/>
+  <object id="463" name="Tile" gid="18" x="960" y="320" width="64" height="64"/>
+  <object id="464" name="Tile" gid="18" x="1024" y="320" width="64" height="64"/>
+  <object id="465" name="Tile" gid="18" x="1088" y="320" width="64" height="64"/>
+  <object id="466" name="Tile" gid="18" x="1152" y="320" width="64" height="64"/>
+  <object id="470" name="Tile" gid="20" x="1408" y="256" width="64" height="64"/>
+  <object id="471" name="Tile" gid="20" x="1472" y="320" width="64" height="64"/>
+  <object id="472" name="Tile" gid="20" x="1536" y="384" width="64" height="64"/>
+  <object id="474" name="Tile" gid="18" x="1344" y="256" width="64" height="64"/>
+  <object id="477" name="Tile" gid="18" x="1600" y="448" width="64" height="64"/>
+  <object id="478" name="Tile" gid="18" x="1664" y="448" width="64" height="64"/>
+  <object id="481" name="Tile" gid="18" x="1856" y="448" width="64" height="64"/>
+  <object id="482" name="Tile" gid="17" x="704" y="576" width="64" height="64"/>
+  <object id="483" name="Tile" gid="17" x="704" y="512" width="64" height="64"/>
+  <object id="484" name="Tile" gid="15" x="768" y="448" width="64" height="64"/>
+  <object id="485" name="Tile" gid="22" x="704" y="448" width="64" height="64"/>
+  <object id="487" name="Tile" gid="22" x="768" y="384" width="64" height="64"/>
+  <object id="488" name="Tile" gid="14" x="832" y="384" width="64" height="64"/>
+  <object id="489" name="Tile" gid="14" x="896" y="384" width="64" height="64"/>
+  <object id="490" name="Tile" gid="14" x="960" y="384" width="64" height="64"/>
+  <object id="491" name="Tile" gid="14" x="1024" y="384" width="64" height="64"/>
+  <object id="495" name="Tile" gid="21" x="1088" y="448" width="64" height="64"/>
+  <object id="497" name="Tile" gid="16" x="1152" y="512" width="64" height="64"/>
+  <object id="498" name="Tile" gid="16" x="1152" y="576" width="64" height="64"/>
+  <object id="501" name="Tile" gid="16" x="1152" y="768" width="64" height="64"/>
+  <object id="502" name="Tile" gid="16" x="1152" y="832" width="64" height="64"/>
+  <object id="506" name="Tile" gid="19" x="1088" y="896" width="64" height="64"/>
+  <object id="508" name="Tile" gid="18" x="832" y="960" width="64" height="64"/>
+  <object id="509" name="Tile" gid="18" x="896" y="960" width="64" height="64"/>
+  <object id="510" name="Tile" gid="18" x="960" y="960" width="64" height="64"/>
+  <object id="511" name="Tile" gid="18" x="1024" y="960" width="64" height="64"/>
+  <object id="513" name="Tile" gid="20" x="768" y="896" width="64" height="64"/>
+  <object id="516" name="Tile" gid="1" x="1152" y="384" width="64" height="64"/>
+  <object id="860" name="Tile" gid="1" x="576" y="1088" width="64" height="64"/>
+  <object id="862" name="Tile" gid="17" x="640" y="1088" width="64" height="64"/>
+  <object id="863" name="Tile" gid="16" x="1216" y="1088" width="64" height="64"/>
+  <object id="864" name="Tile" gid="1" x="1280" y="1088" width="64" height="64"/>
+  <object id="867" name="Tile" gid="1" x="1728" y="896" width="64" height="64"/>
+  <object id="868" name="Tile" gid="1" x="1792" y="896" width="64" height="64"/>
+  <object id="869" name="Tile" gid="1" x="576" y="256" width="64" height="64"/>
+  <object id="870" name="Tile" gid="17" x="640" y="256" width="64" height="64"/>
+  <object id="871" name="Tile" gid="1" x="1728" y="448" width="64" height="64"/>
+  <object id="872" name="Tile" gid="1" x="1792" y="448" width="64" height="64"/>
+  <object id="873" name="Tile" gid="1" x="64" y="896" width="64" height="64"/>
+  <object id="874" name="Tile" gid="1" x="128" y="896" width="64" height="64"/>
+  <object id="910" name="Tile" gid="1" x="1152" y="640" width="64" height="64"/>
+  <object id="911" name="Tile" gid="1" x="1152" y="704" width="64" height="64"/>
+  <object id="1030" name="Tile" gid="3221225494" x="1216" y="320" width="64" height="64"/>
+  <object id="1031" name="Tile" gid="1073741846" x="1408" y="320" width="64" height="64"/>
+  <object id="1032" name="Tile" gid="1073741846" x="1472" y="384" width="64" height="64"/>
+  <object id="1033" name="Tile" gid="1073741846" x="1536" y="448" width="64" height="64"/>
+  <object id="1034" name="Tile" gid="2147483670" x="1088" y="384" width="64" height="64"/>
+  <object id="1035" name="Tile" gid="2147483670" x="1152" y="448" width="64" height="64"/>
+  <object id="1036" name="Tile" gid="3221225494" x="320" y="448" width="64" height="64"/>
+  <object id="1037" name="Tile" gid="3221225494" x="384" y="384" width="64" height="64"/>
+  <object id="1038" name="Tile" gid="3221225494" x="448" y="320" width="64" height="64"/>
+  <object id="1039" name="Tile" gid="1073741846" x="640" y="320" width="64" height="64"/>
+  <object id="1040" name="Tile" gid="2147483670" x="320" y="896" width="64" height="64"/>
+  <object id="1041" name="Tile" gid="2147483670" x="448" y="1024" width="64" height="64"/>
+  <object id="1043" name="Tile" gid="22" x="640" y="1024" width="64" height="64"/>
+  <object id="1044" name="Tile" gid="1073741846" x="768" y="960" width="64" height="64"/>
+  <object id="1045" name="Tile" gid="3221225494" x="1088" y="960" width="64" height="64"/>
+  <object id="1046" name="Tile" gid="3221225494" x="1152" y="896" width="64" height="64"/>
+  <object id="1047" name="Tile" gid="2147483670" x="1216" y="1024" width="64" height="64"/>
+  <object id="1048" name="Tile" gid="1" x="1280" y="256" width="64" height="64"/>
+  <object id="1049" name="Tile" gid="1" x="1216" y="256" width="64" height="64"/>
+  <object id="1052" name="Tile" gid="2147483670" x="384" y="960" width="64" height="64"/>
+  <object id="1189" name="Tile" gid="17" x="704" y="768" width="64" height="64"/>
+  <object id="1190" name="Tile" gid="17" x="704" y="832" width="64" height="64"/>
+  <object id="1191" name="Tile" gid="1073741846" x="704" y="896" width="64" height="64"/>
+  <object id="1192" name="Tile" gid="1" x="704" y="640" width="64" height="64"/>
+  <object id="1193" name="Tile" gid="1" x="704" y="704" width="64" height="64"/>
+  <object id="1194" name="Tile" gid="1" x="640" y="640" width="64" height="64"/>
+  <object id="1195" name="Tile" gid="1" x="640" y="704" width="64" height="64"/>
+  <object id="1196" name="Tile" gid="1" x="640" y="768" width="64" height="64"/>
+  <object id="1197" name="Tile" gid="1" x="640" y="832" width="64" height="64"/>
+  <object id="1198" name="Tile" gid="1" x="640" y="896" width="64" height="64"/>
+  <object id="1199" name="Tile" gid="1" x="576" y="896" width="64" height="64"/>
+  <object id="1200" name="Tile" gid="1" x="576" y="640" width="64" height="64"/>
+  <object id="1201" name="Tile" gid="1" x="576" y="704" width="64" height="64"/>
+  <object id="1202" name="Tile" gid="1" x="512" y="640" width="64" height="64"/>
+  <object id="1203" name="Tile" gid="1" x="512" y="704" width="64" height="64"/>
+  <object id="1204" name="Tile" gid="1" x="512" y="768" width="64" height="64"/>
+  <object id="1205" name="Tile" gid="1" x="512" y="832" width="64" height="64"/>
+ </objectgroup>
+ <objectgroup name="Elevated">
+  <properties>
+   <property name="Cost" type="int" value="1"/>
+   <property name="Terrain" value="Elevated"/>
+  </properties>
+  <object id="527" name="Tile" gid="25" x="0" y="384" width="64" height="64"/>
+  <object id="528" name="Tile" gid="25" x="64" y="384" width="64" height="64"/>
+  <object id="529" name="Tile" gid="25" x="128" y="384" width="64" height="64"/>
+  <object id="530" name="Tile" gid="25" x="192" y="384" width="64" height="64"/>
+  <object id="531" name="Tile" gid="26" x="256" y="384" width="64" height="64"/>
+  <object id="532" name="Tile" gid="26" x="320" y="320" width="64" height="64"/>
+  <object id="533" name="Tile" gid="26" x="384" y="256" width="64" height="64"/>
+  <object id="537" name="Tile" gid="25" x="448" y="192" width="64" height="64"/>
+  <object id="554" name="Tile" gid="26" x="512" y="192" width="64" height="64"/>
+  <object id="613" name="Tile" gid="26" x="1024" y="896" width="64" height="64"/>
+  <object id="616" name="Tile" gid="25" x="960" y="896" width="64" height="64"/>
+  <object id="618" name="Tile" gid="26" x="1088" y="832" width="64" height="64"/>
+  <object id="621" name="Tile" gid="26" x="1088" y="576" width="64" height="64"/>
+  <object id="651" name="Tile" gid="2" x="960" y="576" width="64" height="64"/>
+  <object id="652" name="Tile" gid="2" x="960" y="640" width="64" height="64"/>
+  <object id="656" name="Tile" gid="2" x="896" y="704" width="64" height="64"/>
+  <object id="657" name="Tile" gid="2" x="896" y="768" width="64" height="64"/>
+  <object id="662" name="Tile" gid="2" x="0" y="1088" width="64" height="64"/>
+  <object id="663" name="Tile" gid="2" x="64" y="1088" width="64" height="64"/>
+  <object id="664" name="Tile" gid="2" x="128" y="1088" width="64" height="64"/>
+  <object id="665" name="Tile" gid="2" x="192" y="1088" width="64" height="64"/>
+  <object id="666" name="Tile" gid="2" x="256" y="1088" width="64" height="64"/>
+  <object id="667" name="Tile" gid="2" x="320" y="1152" width="64" height="64"/>
+  <object id="668" name="Tile" gid="2" x="256" y="1152" width="64" height="64"/>
+  <object id="669" name="Tile" gid="2" x="192" y="1152" width="64" height="64"/>
+  <object id="670" name="Tile" type="Tile" gid="2" x="128" y="1152" width="64" height="64"/>
+  <object id="671" name="Tile" gid="2" x="64" y="1152" width="64" height="64"/>
+  <object id="672" name="Tile" gid="2" x="0" y="1152" width="64" height="64"/>
+  <object id="673" name="Tile" gid="2" x="0" y="1216" width="64" height="64"/>
+  <object id="674" name="Tile" gid="2" x="64" y="1216" width="64" height="64"/>
+  <object id="675" name="Tile" gid="2" x="128" y="1216" width="64" height="64"/>
+  <object id="676" name="Tile" gid="2" x="192" y="1216" width="64" height="64"/>
+  <object id="677" name="Tile" gid="2" x="256" y="1216" width="64" height="64"/>
+  <object id="678" name="Tile" gid="2" x="384" y="1216" width="64" height="64"/>
+  <object id="679" name="Tile" gid="2" x="320" y="1216" width="64" height="64"/>
+  <object id="680" name="Tile" gid="2" x="448" y="1216" width="64" height="64"/>
+  <object id="681" name="Tile" gid="2" x="512" y="1280" width="64" height="64"/>
+  <object id="682" name="Tile" gid="2" x="448" y="1280" width="64" height="64"/>
+  <object id="683" name="Tile" gid="2" x="384" y="1280" width="64" height="64"/>
+  <object id="684" name="Tile" gid="2" x="320" y="1280" width="64" height="64"/>
+  <object id="685" name="Tile" gid="2" x="256" y="1280" width="64" height="64"/>
+  <object id="686" name="Tile" gid="2" x="192" y="1280" width="64" height="64"/>
+  <object id="687" name="Tile" gid="2" x="128" y="1280" width="64" height="64"/>
+  <object id="688" name="Tile" gid="2" x="64" y="1280" width="64" height="64"/>
+  <object id="689" name="Tile" gid="2" x="0" y="1280" width="64" height="64"/>
+  <object id="690" name="Tile" gid="2" x="576" y="1280" width="64" height="64"/>
+  <object id="691" name="Tile" gid="2" x="640" y="1280" width="64" height="64"/>
+  <object id="692" name="Tile" gid="2" x="704" y="1280" width="64" height="64"/>
+  <object id="693" name="Tile" gid="2" x="768" y="1280" width="64" height="64"/>
+  <object id="694" name="Tile" gid="2" x="832" y="1280" width="64" height="64"/>
+  <object id="695" name="Tile" gid="2" x="832" y="1216" width="64" height="64"/>
+  <object id="696" name="Tile" gid="2" x="768" y="1216" width="64" height="64"/>
+  <object id="697" name="Tile" gid="2" x="896" y="1216" width="64" height="64"/>
+  <object id="698" name="Tile" gid="2" x="960" y="1216" width="64" height="64"/>
+  <object id="699" name="Tile" gid="2" x="1088" y="1216" width="64" height="64"/>
+  <object id="700" name="Tile" gid="2" x="1024" y="1216" width="64" height="64"/>
+  <object id="701" name="Tile" gid="2" x="896" y="1280" width="64" height="64"/>
+  <object id="702" name="Tile" gid="2" x="960" y="1280" width="64" height="64"/>
+  <object id="703" name="Tile" gid="2" x="1024" y="1280" width="64" height="64"/>
+  <object id="704" name="Tile" gid="2" x="1088" y="1280" width="64" height="64"/>
+  <object id="709" name="Tile" gid="2" x="1152" y="1280" width="64" height="64"/>
+  <object id="710" name="Tile" gid="2" x="1216" y="1280" width="64" height="64"/>
+  <object id="711" name="Tile" gid="2" x="1280" y="1280" width="64" height="64"/>
+  <object id="714" name="Tile" gid="2" x="1344" y="1280" width="64" height="64"/>
+  <object id="715" name="Tile" gid="2" x="1408" y="1280" width="64" height="64"/>
+  <object id="716" name="Tile" gid="2" x="1408" y="1216" width="64" height="64"/>
+  <object id="717" name="Tile" gid="2" x="1472" y="1216" width="64" height="64"/>
+  <object id="718" name="Tile" gid="2" x="1536" y="1216" width="64" height="64"/>
+  <object id="719" name="Tile" gid="2" x="1600" y="1216" width="64" height="64"/>
+  <object id="720" name="Tile" gid="2" x="1536" y="1152" width="64" height="64"/>
+  <object id="721" name="Tile" gid="2" x="1600" y="1152" width="64" height="64"/>
+  <object id="722" name="Tile" gid="2" x="1600" y="1088" width="64" height="64"/>
+  <object id="723" name="Tile" gid="2" x="1664" y="1088" width="64" height="64"/>
+  <object id="724" name="Tile" gid="2" x="1728" y="1088" width="64" height="64"/>
+  <object id="725" name="Tile" gid="2" x="1792" y="1088" width="64" height="64"/>
+  <object id="726" name="Tile" gid="2" x="1856" y="1088" width="64" height="64"/>
+  <object id="729" name="Tile" gid="2" x="1664" y="1152" width="64" height="64"/>
+  <object id="730" name="Tile" gid="2" x="1728" y="1152" width="64" height="64"/>
+  <object id="731" name="Tile" gid="2" x="1792" y="1152" width="64" height="64"/>
+  <object id="732" name="Tile" gid="2" x="1856" y="1152" width="64" height="64"/>
+  <object id="733" name="Tile" gid="2" x="1856" y="1216" width="64" height="64"/>
+  <object id="734" name="Tile" gid="2" x="1792" y="1216" width="64" height="64"/>
+  <object id="735" name="Tile" gid="2" x="1728" y="1216" width="64" height="64"/>
+  <object id="736" name="Tile" gid="2" x="1664" y="1216" width="64" height="64"/>
+  <object id="737" name="Tile" gid="2" x="1664" y="1280" width="64" height="64"/>
+  <object id="738" name="Tile" gid="2" x="1728" y="1280" width="64" height="64"/>
+  <object id="739" name="Tile" gid="2" x="1792" y="1280" width="64" height="64"/>
+  <object id="740" name="Tile" gid="2" x="1856" y="1280" width="64" height="64"/>
+  <object id="741" name="Tile" gid="2" x="1600" y="1280" width="64" height="64"/>
+  <object id="742" name="Tile" gid="2" x="1536" y="1280" width="64" height="64"/>
+  <object id="743" name="Tile" gid="2" x="1472" y="1280" width="64" height="64"/>
+  <object id="746" name="Tile" gid="2" x="0" y="320" width="64" height="64"/>
+  <object id="747" name="Tile" gid="2" x="64" y="320" width="64" height="64"/>
+  <object id="748" name="Tile" gid="2" x="128" y="320" width="64" height="64"/>
+  <object id="750" name="Tile" gid="2" x="192" y="320" width="64" height="64"/>
+  <object id="751" name="Tile" gid="2" x="0" y="256" width="64" height="64"/>
+  <object id="752" name="Tile" gid="2" x="64" y="256" width="64" height="64"/>
+  <object id="753" name="Tile" gid="2" x="128" y="256" width="64" height="64"/>
+  <object id="754" name="Tile" gid="2" x="192" y="256" width="64" height="64"/>
+  <object id="755" name="Tile" gid="2" x="256" y="256" width="64" height="64"/>
+  <object id="756" name="Tile" gid="2" x="256" y="192" width="64" height="64"/>
+  <object id="757" name="Tile" gid="2" x="192" y="192" width="64" height="64"/>
+  <object id="758" name="Tile" gid="2" x="128" y="192" width="64" height="64"/>
+  <object id="759" name="Tile" gid="2" x="64" y="192" width="64" height="64"/>
+  <object id="760" name="Tile" gid="2" x="0" y="192" width="64" height="64"/>
+  <object id="761" name="Tile" gid="2" x="320" y="192" width="64" height="64"/>
+  <object id="762" name="Tile" gid="2" x="320" y="128" width="64" height="64"/>
+  <object id="763" name="Tile" gid="2" x="384" y="128" width="64" height="64"/>
+  <object id="764" name="Tile" gid="2" x="448" y="128" width="64" height="64"/>
+  <object id="765" name="Tile" gid="2" x="256" y="128" width="64" height="64"/>
+  <object id="766" name="Tile" gid="2" x="192" y="128" width="64" height="64"/>
+  <object id="767" name="Tile" gid="2" x="128" y="128" width="64" height="64"/>
+  <object id="768" name="Tile" gid="2" x="64" y="128" width="64" height="64"/>
+  <object id="769" name="Tile" gid="2" x="0" y="128" width="64" height="64"/>
+  <object id="770" name="Tile" gid="2" x="0" y="64" width="64" height="64"/>
+  <object id="771" name="Tile" gid="2" x="64" y="64" width="64" height="64"/>
+  <object id="772" name="Tile" gid="2" x="128" y="64" width="64" height="64"/>
+  <object id="773" name="Tile" gid="2" x="192" y="64" width="64" height="64"/>
+  <object id="774" name="Tile" gid="2" x="256" y="64" width="64" height="64"/>
+  <object id="775" name="Tile" gid="2" x="320" y="64" width="64" height="64"/>
+  <object id="776" name="Tile" gid="2" x="384" y="64" width="64" height="64"/>
+  <object id="777" name="Tile" gid="2" x="448" y="64" width="64" height="64"/>
+  <object id="778" name="Tile" gid="2" x="512" y="64" width="64" height="64"/>
+  <object id="779" name="Tile" gid="2" x="576" y="64" width="64" height="64"/>
+  <object id="780" name="Tile" gid="2" x="640" y="64" width="64" height="64"/>
+  <object id="783" name="Tile" gid="2" x="704" y="64" width="64" height="64"/>
+  <object id="784" name="Tile" gid="2" x="768" y="64" width="64" height="64"/>
+  <object id="785" name="Tile" gid="2" x="768" y="128" width="64" height="64"/>
+  <object id="786" name="Tile" gid="2" x="832" y="128" width="64" height="64"/>
+  <object id="787" name="Tile" gid="2" x="896" y="128" width="64" height="64"/>
+  <object id="788" name="Tile" gid="2" x="960" y="128" width="64" height="64"/>
+  <object id="789" name="Tile" gid="2" x="1024" y="128" width="64" height="64"/>
+  <object id="790" name="Tile" gid="2" x="1088" y="128" width="64" height="64"/>
+  <object id="791" name="Tile" gid="2" x="1088" y="64" width="64" height="64"/>
+  <object id="792" name="Tile" gid="2" x="1024" y="64" width="64" height="64"/>
+  <object id="793" name="Tile" gid="2" x="960" y="64" width="64" height="64"/>
+  <object id="794" name="Tile" gid="2" x="896" y="64" width="64" height="64"/>
+  <object id="795" name="Tile" gid="2" x="832" y="64" width="64" height="64"/>
+  <object id="796" name="Tile" gid="2" x="1152" y="64" width="64" height="64"/>
+  <object id="797" name="Tile" gid="2" x="1216" y="64" width="64" height="64"/>
+  <object id="798" name="Tile" gid="2" x="1280" y="64" width="64" height="64"/>
+  <object id="801" name="Tile" gid="2" x="1344" y="64" width="64" height="64"/>
+  <object id="802" name="Tile" gid="2" x="1408" y="64" width="64" height="64"/>
+  <object id="803" name="Tile" gid="2" x="1408" y="128" width="64" height="64"/>
+  <object id="804" name="Tile" gid="2" x="1472" y="128" width="64" height="64"/>
+  <object id="805" name="Tile" gid="2" x="1472" y="64" width="64" height="64"/>
+  <object id="806" name="Tile" gid="2" x="1536" y="128" width="64" height="64"/>
+  <object id="807" name="Tile" gid="2" x="1536" y="64" width="64" height="64"/>
+  <object id="808" name="Tile" gid="2" x="1536" y="192" width="64" height="64"/>
+  <object id="809" name="Tile" gid="2" x="1600" y="192" width="64" height="64"/>
+  <object id="810" name="Tile" gid="2" x="1664" y="192" width="64" height="64"/>
+  <object id="811" name="Tile" gid="2" x="1664" y="256" width="64" height="64"/>
+  <object id="812" name="Tile" gid="2" x="1600" y="256" width="64" height="64"/>
+  <object id="813" name="Tile" gid="2" x="1728" y="256" width="64" height="64"/>
+  <object id="814" name="Tile" gid="2" x="1792" y="256" width="64" height="64"/>
+  <object id="815" name="Tile" gid="2" x="1856" y="256" width="64" height="64"/>
+  <object id="818" name="Tile" gid="2" x="1728" y="192" width="64" height="64"/>
+  <object id="819" name="Tile" gid="2" x="1792" y="192" width="64" height="64"/>
+  <object id="820" name="Tile" gid="2" x="1856" y="192" width="64" height="64"/>
+  <object id="821" name="Tile" gid="2" x="1856" y="128" width="64" height="64"/>
+  <object id="822" name="Tile" gid="2" x="1792" y="128" width="64" height="64"/>
+  <object id="823" name="Tile" gid="2" x="1728" y="128" width="64" height="64"/>
+  <object id="824" name="Tile" gid="2" x="1664" y="128" width="64" height="64"/>
+  <object id="825" name="Tile" gid="2" x="1600" y="128" width="64" height="64"/>
+  <object id="826" name="Tile" gid="2" x="1600" y="64" width="64" height="64"/>
+  <object id="827" name="Tile" gid="2" x="1664" y="64" width="64" height="64"/>
+  <object id="828" name="Tile" gid="2" x="1792" y="64" width="64" height="64"/>
+  <object id="829" name="Tile" gid="2" x="1728" y="64" width="64" height="64"/>
+  <object id="830" name="Tile" gid="2" x="1856" y="64" width="64" height="64"/>
+  <object id="925" name="Tile" gid="1073741850" x="1664" y="960" width="64" height="64"/>
+  <object id="926" name="Tile" gid="3221225498" x="1856" y="960" width="64" height="64"/>
+  <object id="927" name="Tile" gid="3221225498" x="1600" y="960" width="64" height="64"/>
+  <object id="930" name="Tile" gid="3221225498" x="1536" y="1024" width="64" height="64"/>
+  <object id="931" name="Tile" gid="3221225498" x="1472" y="1088" width="64" height="64"/>
+  <object id="933" name="Tile" gid="3221225498" x="1344" y="1152" width="64" height="64"/>
+  <object id="934" name="Tile" gid="1073741850" x="1152" y="1088" width="64" height="64"/>
+  <object id="935" name="Tile" gid="3221225498" x="704" y="1088" width="64" height="64"/>
+  <object id="936" name="Tile" gid="1073741850" x="512" y="1152" width="64" height="64"/>
+  <object id="938" name="Tile" gid="1073741850" x="384" y="1088" width="64" height="64"/>
+  <object id="939" name="Tile" gid="1073741850" x="320" y="1024" width="64" height="64"/>
+  <object id="940" name="Tile" gid="1073741850" x="256" y="960" width="64" height="64"/>
+  <object id="941" name="Tile" gid="3221225498" x="192" y="960" width="64" height="64"/>
+  <object id="942" name="Tile" gid="1073741850" x="0" y="960" width="64" height="64"/>
+  <object id="951" name="Tile" gid="1073741849" x="768" y="1088" width="64" height="64"/>
+  <object id="952" name="Tile" gid="1073741849" x="832" y="1088" width="64" height="64"/>
+  <object id="953" name="Tile" gid="1073741849" x="896" y="1088" width="64" height="64"/>
+  <object id="954" name="Tile" gid="1073741849" x="960" y="1088" width="64" height="64"/>
+  <object id="955" name="Tile" gid="1073741849" x="1024" y="1088" width="64" height="64"/>
+  <object id="957" name="Tile" gid="1073741849" x="1088" y="1088" width="64" height="64"/>
+  <object id="959" name="Tile" gid="1073741849" x="448" y="1152" width="64" height="64"/>
+  <object id="961" name="Tile" gid="2147483674" x="768" y="832" width="64" height="64"/>
+  <object id="962" name="Tile" gid="2147483674" x="832" y="896" width="64" height="64"/>
+  <object id="963" name="Tile" gid="1073741850" x="1088" y="768" width="64" height="64"/>
+  <object id="965" name="Tile" gid="3221225498" x="768" y="512" width="64" height="64"/>
+  <object id="966" name="Tile" gid="3221225498" x="832" y="448" width="64" height="64"/>
+  <object id="967" name="Tile" gid="1073741850" x="1024" y="448" width="64" height="64"/>
+  <object id="968" name="Tile" gid="1073741850" x="1088" y="512" width="64" height="64"/>
+  <object id="977" name="Tile" gid="1073741849" x="896" y="448" width="64" height="64"/>
+  <object id="978" name="Tile" gid="1073741849" x="960" y="448" width="64" height="64"/>
+  <object id="981" name="Tile" gid="25" x="896" y="896" width="64" height="64"/>
+  <object id="983" name="Tile" gid="26" x="1152" y="256" width="64" height="64"/>
+  <object id="984" name="Tile" gid="2147483674" x="704" y="256" width="64" height="64"/>
+  <object id="986" name="Tile" gid="2147483674" x="1472" y="256" width="64" height="64"/>
+  <object id="987" name="Tile" gid="2147483674" x="1536" y="320" width="64" height="64"/>
+  <object id="988" name="Tile" gid="2147483674" x="1600" y="384" width="64" height="64"/>
+  <object id="991" name="Tile" gid="2147483674" x="768" y="576" width="64" height="64"/>
+  <object id="994" name="Tile" gid="2147483674" x="1856" y="384" width="64" height="64"/>
+  <object id="995" name="Tile" gid="26" x="1664" y="384" width="64" height="64"/>
+  <object id="996" name="Tile" gid="2147483674" x="1344" y="192" width="64" height="64"/>
+  <object id="1001" name="Tile" gid="25" x="768" y="256" width="64" height="64"/>
+  <object id="1002" name="Tile" gid="25" x="832" y="256" width="64" height="64"/>
+  <object id="1003" name="Tile" gid="25" x="896" y="256" width="64" height="64"/>
+  <object id="1004" name="Tile" gid="25" x="960" y="256" width="64" height="64"/>
+  <object id="1005" name="Tile" gid="25" x="1024" y="256" width="64" height="64"/>
+  <object id="1006" name="Tile" gid="25" x="1088" y="256" width="64" height="64"/>
+  <object id="1053" name="Tile" gid="2147483675" x="704" y="1152" width="64" height="64"/>
+  <object id="1054" name="Tile" gid="27" x="1152" y="1152" width="64" height="64"/>
+  <object id="1055" name="Tile" gid="27" x="1152" y="192" width="64" height="64"/>
+  <object id="1056" name="Tile" gid="2147483675" x="704" y="192" width="64" height="64"/>
+  <object id="1057" name="Tile" gid="1073741849" x="1408" y="1152" width="64" height="64"/>
+  <object id="1062" name="Tile" gid="25" x="1408" y="192" width="64" height="64"/>
+  <object id="1063" name="Tile" gid="1073741854" x="704" y="128" width="64" height="64"/>
+  <object id="1064" name="Tile" gid="3221225502" x="512" y="128" width="64" height="64"/>
+  <object id="1065" name="Tile" gid="1073741854" x="832" y="576" width="64" height="64"/>
+  <object id="1066" name="Tile" gid="30" x="832" y="512" width="64" height="64"/>
+  <object id="1067" name="Tile" gid="2147483678" x="512" y="1216" width="64" height="64"/>
+  <object id="1068" name="Tile" gid="2147483678" x="1152" y="1216" width="64" height="64"/>
+  <object id="1069" name="Tile" gid="3221225502" x="1152" y="128" width="64" height="64"/>
+  <object id="1070" name="Tile" gid="3221225502" x="1664" y="320" width="64" height="64"/>
+  <object id="1071" name="Tile" gid="1073741854" x="1856" y="320" width="64" height="64"/>
+  <object id="1075" name="Tile" gid="3221225502" x="1024" y="832" width="64" height="64"/>
+  <object id="1076" name="Tile" gid="2147483678" x="0" y="1024" width="64" height="64"/>
+  <object id="1077" name="Tile" gid="30" x="192" y="1024" width="64" height="64"/>
+  <object id="1078" name="Tile" gid="30" x="704" y="1216" width="64" height="64"/>
+  <object id="1079" name="Tile" gid="30" x="1344" y="1216" width="64" height="64"/>
+  <object id="1080" name="Tile" gid="30" x="1856" y="1024" width="64" height="64"/>
+  <object id="1081" name="Tile" gid="2147483678" x="1664" y="1024" width="64" height="64"/>
+  <object id="1083" name="Tile" gid="2147483678" x="1024" y="768" width="64" height="64"/>
+  <object id="1084" name="Tile" gid="3221225502" x="1024" y="576" width="64" height="64"/>
+  <object id="1085" name="Tile" gid="1073741854" x="1344" y="128" width="64" height="64"/>
+  <object id="1088" name="Tile" gid="1073741857" x="576" y="128" width="64" height="64"/>
+  <object id="1089" name="Tile" gid="1073741857" x="640" y="128" width="64" height="64"/>
+  <object id="1090" name="Tile" gid="1073741857" x="1216" y="128" width="64" height="64"/>
+  <object id="1091" name="Tile" gid="1073741857" x="1280" y="128" width="64" height="64"/>
+  <object id="1092" name="Tile" gid="1073741857" x="1728" y="320" width="64" height="64"/>
+  <object id="1093" name="Tile" gid="1073741857" x="1792" y="320" width="64" height="64"/>
+  <object id="1094" name="Tile" gid="2147483679" x="832" y="640" width="64" height="64"/>
+  <object id="1095" name="Tile" gid="31" x="1024" y="640" width="64" height="64"/>
+  <object id="1096" name="Tile" gid="31" x="1024" y="704" width="64" height="64"/>
+  <object id="1097" name="Tile" gid="33" x="1728" y="1024" width="64" height="64"/>
+  <object id="1098" name="Tile" gid="33" x="1792" y="1024" width="64" height="64"/>
+  <object id="1099" name="Tile" gid="33" x="1216" y="1216" width="64" height="64"/>
+  <object id="1100" name="Tile" gid="33" x="1280" y="1216" width="64" height="64"/>
+  <object id="1101" name="Tile" gid="33" x="576" y="1216" width="64" height="64"/>
+  <object id="1102" name="Tile" gid="33" x="640" y="1216" width="64" height="64"/>
+  <object id="1103" name="Tile" gid="33" x="64" y="1024" width="64" height="64"/>
+  <object id="1104" name="Tile" gid="33" x="128" y="1024" width="64" height="64"/>
+  <object id="1186" name="Tile" gid="3221225498" x="768" y="768" width="64" height="64"/>
+  <object id="1187" name="Tile" gid="30" x="832" y="768" width="64" height="64"/>
+  <object id="1188" name="Tile" gid="2" x="832" y="704" width="64" height="64"/>
+ </objectgroup>
+ <objectgroup name="Stairs">
+  <properties>
+   <property name="Cost" type="int" value="1"/>
+   <property name="Terrain" value="Stairs"/>
+  </properties>
+  <object id="1105" name="Stairs_ud" gid="1073741852" x="576" y="192" width="64" height="64"/>
+  <object id="1106" name="Stairs_ud" gid="1073741852" x="640" y="192" width="64" height="64"/>
+  <object id="1107" name="Stairs_ud" gid="1073741852" x="1216" y="192" width="64" height="64"/>
+  <object id="1108" name="Stairs_ud" gid="1073741852" x="1280" y="192" width="64" height="64"/>
+  <object id="1109" name="Stairs_ud" gid="1073741852" x="1728" y="384" width="64" height="64"/>
+  <object id="1110" name="Stairs_ud" gid="1073741852" x="1792" y="384" width="64" height="64"/>
+  <object id="1111" name="Stairs_ud" gid="28" x="64" y="960" width="64" height="64"/>
+  <object id="1112" name="Stairs_ud" gid="28" x="128" y="960" width="64" height="64"/>
+  <object id="1113" name="Stairs_ud" gid="28" x="576" y="1152" width="64" height="64"/>
+  <object id="1114" name="Stairs_ud" gid="28" x="640" y="1152" width="64" height="64"/>
+  <object id="1115" name="Stairs_ud" gid="28" x="1216" y="1152" width="64" height="64"/>
+  <object id="1116" name="Stairs_ud" gid="28" x="1280" y="1152" width="64" height="64"/>
+  <object id="1117" name="Stairs_ud" gid="28" x="1728" y="960" width="64" height="64"/>
+  <object id="1118" name="Stairs_ud" gid="28" x="1792" y="960" width="64" height="64"/>
+  <object id="1119" name="Stairs_rl" gid="29" x="1088" y="640" width="64" height="64"/>
+  <object id="1120" name="Stairs_rl" gid="29" x="1088" y="704" width="64" height="64"/>
+  <object id="1121" name="Stairs_rl" gid="2147483677" x="768" y="640" width="64" height="64"/>
+  <object id="1184" name="Stairs_rl" gid="2147483677" x="768" y="704" width="64" height="64"/>
+ </objectgroup>
+ <objectgroup name="Covers">
+  <properties>
+   <property name="Terrain" value="Cover"/>
+  </properties>
+  <object id="1123" name="Cover" gid="32" x="256" y="320" width="64" height="64"/>
+  <object id="1124" name="Cover" gid="32" x="320" y="256" width="64" height="64"/>
+  <object id="1125" name="Cover" gid="32" x="384" y="192" width="64" height="64"/>
+  <object id="1126" name="Cover" gid="32" x="768" y="192" width="64" height="64"/>
+  <object id="1127" name="Cover" gid="32" x="832" y="192" width="64" height="64"/>
+  <object id="1128" name="Cover" gid="32" x="896" y="192" width="64" height="64"/>
+  <object id="1129" name="Cover" gid="32" x="960" y="192" width="64" height="64"/>
+  <object id="1131" name="Cover" gid="32" x="1024" y="192" width="64" height="64"/>
+  <object id="1132" name="Cover" gid="32" x="1088" y="192" width="64" height="64"/>
+  <object id="1133" name="Cover" gid="32" x="1472" y="192" width="64" height="64"/>
+  <object id="1134" name="Cover" gid="32" x="1536" y="256" width="64" height="64"/>
+  <object id="1135" name="Cover" gid="32" x="1600" y="320" width="64" height="64"/>
+  <object id="1136" name="Cover" gid="32" x="384" y="576" width="64" height="64"/>
+  <object id="1137" name="Cover" gid="32" x="384" y="640" width="64" height="64"/>
+  <object id="1138" name="Cover" gid="32" x="384" y="704" width="64" height="64"/>
+  <object id="1139" name="Cover" gid="32" x="384" y="768" width="64" height="64"/>
+  <object id="1140" name="Cover" gid="32" x="256" y="1024" width="64" height="64"/>
+  <object id="1141" name="Cover" gid="32" x="320" y="1088" width="64" height="64"/>
+  <object id="1142" name="Cover" gid="32" x="384" y="1152" width="64" height="64"/>
+  <object id="1143" name="Cover" gid="32" x="768" y="1152" width="64" height="64"/>
+  <object id="1144" name="Cover" gid="32" x="832" y="1152" width="64" height="64"/>
+  <object id="1145" name="Cover" gid="32" x="896" y="1152" width="64" height="64"/>
+  <object id="1146" name="Cover" gid="32" x="960" y="1152" width="64" height="64"/>
+  <object id="1147" name="Cover" gid="32" x="1024" y="1152" width="64" height="64"/>
+  <object id="1148" name="Cover" gid="32" x="1088" y="1152" width="64" height="64"/>
+  <object id="1149" name="Cover" gid="32" x="1472" y="1152" width="64" height="64"/>
+  <object id="1150" name="Cover" gid="32" x="1536" y="1088" width="64" height="64"/>
+  <object id="1151" name="Cover" gid="32" x="1600" y="1024" width="64" height="64"/>
+  <object id="1152" name="Cover" gid="32" x="512" y="896" width="64" height="64"/>
+  <object id="1153" name="Cover" gid="32" x="512" y="960" width="64" height="64"/>
+  <object id="1154" name="Cover" gid="32" x="576" y="768" width="64" height="64"/>
+  <object id="1155" name="Cover" gid="32" x="576" y="832" width="64" height="64"/>
+  <object id="1156" name="Cover" gid="32" x="512" y="384" width="64" height="64"/>
+  <object id="1157" name="Cover" gid="32" x="512" y="448" width="64" height="64"/>
+  <object id="1158" name="Cover" gid="32" x="576" y="512" width="64" height="64"/>
+  <object id="1159" name="Cover" gid="32" x="576" y="576" width="64" height="64"/>
+  <object id="1160" name="Cover" gid="32" x="896" y="512" width="64" height="64"/>
+  <object id="1161" name="Cover" gid="32" x="960" y="512" width="64" height="64"/>
+  <object id="1162" name="Cover" gid="32" x="1024" y="512" width="64" height="64"/>
+  <object id="1163" name="Cover" gid="32" x="896" y="576" width="64" height="64"/>
+  <object id="1164" name="Cover" gid="32" x="896" y="640" width="64" height="64"/>
+  <object id="1165" name="Cover" gid="32" x="960" y="704" width="64" height="64"/>
+  <object id="1166" name="Cover" gid="32" x="960" y="768" width="64" height="64"/>
+  <object id="1167" name="Cover" gid="32" x="960" y="832" width="64" height="64"/>
+  <object id="1168" name="Cover" gid="32" x="896" y="832" width="64" height="64"/>
+  <object id="1169" name="Cover" gid="32" x="832" y="832" width="64" height="64"/>
+  <object id="1170" name="Cover" gid="32" x="1280" y="768" width="64" height="64"/>
+  <object id="1171" name="Cover" gid="32" x="1280" y="832" width="64" height="64"/>
+  <object id="1172" name="Cover" gid="32" x="1344" y="896" width="64" height="64"/>
+  <object id="1173" name="Cover" gid="32" x="1344" y="960" width="64" height="64"/>
+  <object id="1174" name="Cover" gid="32" x="1344" y="384" width="64" height="64"/>
+  <object id="1175" name="Cover" gid="32" x="1344" y="448" width="64" height="64"/>
+  <object id="1176" name="Cover" gid="32" x="1280" y="512" width="64" height="64"/>
+  <object id="1177" name="Cover" gid="32" x="1280" y="576" width="64" height="64"/>
+  <object id="1178" name="Cover" gid="32" x="1472" y="576" width="64" height="64"/>
+  <object id="1179" name="Cover" gid="32" x="1472" y="640" width="64" height="64"/>
+  <object id="1180" name="Cover" gid="32" x="1472" y="704" width="64" height="64"/>
+  <object id="1181" name="Cover" gid="32" x="1472" y="768" width="64" height="64"/>
+ </objectgroup>
+ <layer name="Tile Layer 1" width="30" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgF6IAZiFmoqG4U0BaMxsPgBxxYxDjpYC8XFjF2Otg7CsgHrEDMNozsGaqA2PAZDUfcAACdGwBk
+  </data>
+ </layer>
+</map>
